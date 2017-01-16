@@ -1,0 +1,329 @@
+/* Varibles ===========*/
+
+//Basic
+$body-background:			url("../../img/body_texture.jpg") repeat center center;
+$heading-highlight:			#ebbd03;
+
+//Nav
+$cover-background: 			url('../../img/cover.png') center bottom no-repeat;
+$nav-font-size: 			1rem;
+$nav-letter-spacing: 		2px;
+$nav-font-weight: 			500;
+$nav-line-height: 			1.5rem;
+
+//Responsive Nav
+$responsive-nav-bg:			rgba(22,22,26,0.9);
+$responsive-nav-radius:		2rem;
+$responsive-nav-padding:	1.5rem;
+$responsive-nav-border:		rgba(255, 255, 255, 0.1) 1px solid;
+
+//Links
+$link-font-size:			$font-size-base * .8;
+$link-letter-spacing:		.2rem;
+$link-underline-color:		1px solid $brand-primary;
+
+//Pizzas
+$sale-price-color:			#808080;
+
+//Button
+$btn-font-size: 			$font-size-base * .8;
+$btn-font-weight:			600;
+$btn-letter-spacing:		.1rem;
+
+//Footer
+$social-icons-size: 		2rem;
+$social-icons-color: 		rgba(255,255,255,.3);
+$footer-background-right: 	url('../../img/footer-right.png') right top no-repeat;
+$footer-background-left: 	url('../../img/footer-left.png') left top no-repeat;
+
+
+
+/* Basic =============*/
+body {
+	background: $body-background;
+	font-weight: 300;
+}
+
+
+
+/* Cover ===========*/
+#cover {
+	min-height: 100vh;
+	background: $cover-background;
+	background-size: cover;
+
+		& #nav-menu {
+			padding: 2rem;
+
+			& .navbar {
+				line-height: $nav-line-height;
+				z-index: 1000;
+
+				& .nav-item {
+					text-transform: uppercase;
+					font-size: $nav-font-size;
+					letter-spacing: $nav-letter-spacing;
+					font-weight: $nav-font-weight;
+
+					& .nav-link {
+						padding: 0 0rem;
+					}
+
+				}
+			}
+
+		}
+
+		& #nav-slogan {
+			min-height: 65vh;
+		}
+}
+
+
+
+/* Pizzas ===========*/
+.menu {
+	@include transition(all, .6s, easy-in-out);
+
+	& .nav-item {
+		text-transform: uppercase;
+		font-size: $nav-font-size;
+		letter-spacing: 3px;
+		font-weight: 500;
+
+		& i {
+			font-size: 3rem;
+			padding-bottom: .5rem;
+		}
+
+		& .nav-link {
+			color: $body-color;
+		}
+
+		& .active {
+			color: $brand-primary;
+		}
+
+	}
+
+}
+
+.card-img-top {
+	@include transition(all, .6s, easy-in-out);
+
+	&:hover {
+		transform: scale(1.05);
+	}
+}
+
+.dots-elipse {
+	background: url(../../img/pizza-dots.png) center center no-repeat;
+	background-size: contain;
+}
+
+.sale {
+	text-decoration: line-through;
+	color: $sale-price-color;
+}
+
+.link {
+	text-transform: uppercase;
+	letter-spacing: $link-letter-spacing;
+	font-size: $link-font-size;
+}
+
+.animted-link {
+	position: relative;
+
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0%;
+		border-bottom: $link-underline-color;
+		transition: 0.5s;
+	}
+
+	&:hover:after{
+		width: 100%;
+	}
+}
+
+
+
+/* Footer ===========*/
+#footer {
+	height: 100%;
+	background: $footer-background-left, $footer-background-right;
+	background-size: initial;
+}
+
+#social {
+	font-size: $social-icons-size;
+	//@include transition(all, 5s, easy-in-out);
+	
+	& i {
+		@include transition(all, .2s, easy-in-out);
+		color: $social-icons-color;
+	}
+
+	& i:hover {
+		@include scale(.85);
+		color: $brand-primary;
+	}
+
+}
+
+
+
+/* Buttons ===========*/
+.btn {
+	font-size: $btn-font-size;
+	font-weight: $btn-font-weight;
+	text-transform: uppercase;
+	letter-spacing: $btn-letter-spacing;
+}
+
+button:focus {
+	outline:0 !important;
+}
+
+
+
+/* Others ===========*/
+
+.pb-05 {
+	padding-bottom: .5rem;
+}
+
+.highlight {
+	color: $brand-primary;
+}
+
+.section-space {
+	margin-bottom: 7vh;
+}
+
+.smaller-lineheight {
+	line-height: .95;
+}
+
+
+
+/* Media Queries ===========*/
+
+// Extra small devices (portrait phones, less than 544px)
+@media (max-width: 543px) { 
+	#cover {
+		background: none;
+
+		& #nav-menu {
+			padding: .5rem;
+		}
+
+	}
+
+	#footer {
+		background: none;
+	}
+
+	.display-1 {
+		font-size: 3rem;
+	}
+
+	.display-3 {
+		font-size: 3rem;
+	}
+
+}
+
+// Small devices (landscape phones, 544px and up)
+@media (min-width: 544px) and (max-width: 767px) {
+	#footer {
+		background: none;
+	}
+
+	.display-1 {
+		font-size: 4rem;
+	}
+
+	.display-3 {
+		font-size: 3rem;
+	}
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) { 
+	#footer {
+		background: none;
+	}
+
+	.display-3 {
+		font-size: 3rem;
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) { 
+
+	.display-3 {
+		font-size: 3rem;
+	}
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+	
+}
+
+// Extra small, small, medium screens together (phones & tablets, 0px and up to 992px) DRY element
+@media (max-width: 992px){
+
+	#cover {
+
+		& #nav-header {
+			height: 20vh;
+		}
+
+		& .navbar-toggleable-md {
+			background-color: $responsive-nav-bg;
+			border-radius: $responsive-nav-radius;
+			padding: 1rem;
+			
+			& .navbar-nav {
+				margin-top: 0;
+	   			margin-bottom: 0;
+
+				& .nav-item {
+					padding: .5rem 1rem;
+				}
+
+			}
+
+		}
+
+		.navbar-toggler {
+			background-color: $brand-primary;
+		}
+
+	}
+
+}
+
+// Extra hight screens (1500px and up)
+@media (min-height: 1500px) {
+	#cover {
+		min-height: 70vh;
+		max-height: 70vh;
+
+
+		& #nav-slogan {
+			min-height: 50vh;
+		}
+	}
+}
+
+
+
