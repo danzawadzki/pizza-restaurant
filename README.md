@@ -15,3 +15,13 @@ Font Awesome (http://fortawesome.github.com/Font-Awesome)
 ### Others:
 Bootstrap (http://getbootstrap.com)
 Sass (http://sass-lang.com/)
+
+
+## Social profiles:
+Portfolio: [danielzawadzki.com](http://danielzawadzki.com/)
+
+Twitter: [@danzawadzki9](https://twitter.com/danzawadzki7)
+
+Codepen: [@danzawadzki](https://codepen.io/danzawadzki/)
+
+Linkedin: [@danzawadzki](https://www.linkedin.com/in/danzawadzki/)
